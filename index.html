@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -23,23 +24,36 @@
 
 <div id="vue-app">
 
-<header class="row"> 
- <h1>Weather Website</h1>
- <div class="search-bar"><input type="text" v-model="search" placeholder="Search Cities"></div>
+<header class="ss-row"> 
+
+
+ <div><h1>Random Weather dot.com </h1></div>
+ 
+ <div class="header-search-button">
+  <div class="header-one"><button v-on:click="changeDegDisplay" class="button" type="button" >&#8451/&#8457</button></div>
+ <div class="search-bar"><input type="text" v-model="search" placeholder="Search Cities"></div> 
+</div>
+   
+
+
 </header>
   
    
      
-<div class="row wrapper">
+<div class="ss-row wrapper">
+
 
     <div v-for="(city, index) in filteredCities" class="weather-card" v-bind:style="'backgroundColor:' + changeColor()">
    
-<!--        <img v-bind:src="photos[index].largeImageURL" class="background-photo">-->
+<!--    <img v-bind:src="photos[index].largeImageURL" class="background-photo"> -->
         <div class="photo-text">
-        <i class="wi wi-day-sunny wi-flip-vertical"></i>
-        <h4>{{city.name}}</h4>
-        <h4>{{city.main.temp}}&#8451</h4>
-        <h5>{{city.weather[0].description}}</h5>
+        <addIcon :weather="city.weather[0].description"></addIcon>
+        <div class="city-temp">
+        <h4 class="city-name">{{city.name}}</h4> 
+        <h4 v-if="celcius" class="city-name">{{Math.floor(city.main.temp)}}&#8451</h4>
+        <h4 v-if="fahrenheit" class="city-name">{{convertToFah(city.main.temp)}}&#8457</h4>
+        </div>
+        <h5 v-bind:style="'text-transform:' + 'capitalize' " class="weather-description">{{city.weather[0].description}}</h5>
         </div>
                 
     </div>

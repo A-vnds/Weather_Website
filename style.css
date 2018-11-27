@@ -7,28 +7,34 @@
 html,
 body {
     text-align: center;
-    background-color: #beacac;
+    background-color: #fff;
     color: #555;
     font-family: 'Roboto', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
+    min-height: 1000px;
+}
+
+
+body {
+    background-image: url(just-waves%20copy.jpg);
 }
 
 header {
     text-align: center;
 }
 
-.row {
+.ss-row {
     max-width: 1200px;
     margin: 0 auto;
 }
+
 
 .wrapper {
     margin-top: 20px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-
 }
 
 
@@ -36,13 +42,15 @@ header {
     position: relative;
     text-align: center;
     position: relative;  
-/*    border: 1px solid #fff;*/
     border-radius: 20px;
     width: 300px;
-    height: 400px;
+    height: 300px;
 }
 
-
+h1 {
+    margin-top: 20px;
+    font-size: 350%;
+}
 
 .photo-text{
     position: absolute;
@@ -50,16 +58,18 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-weight: 400;
-    font-size: 140%;
     z-index: 30;
 }
 
-input {
-    min-width: 300px;
-    min-height: 30px;
-    font-size: 120%;
+
+
+i {
+    font-size: 400%;
+    margin-bottom: 10px;
 }
+
+
+
 
 /*
 .background-photo{
@@ -68,3 +78,55 @@ input {
     border-radius: 5px;
 }
 */
+
+.button {
+    width:60px;
+    height: 60px;
+    border-style: none;
+}
+
+.city-name {
+    justify-content: center;
+    font-weight: bold;
+    font-size: 120%;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.city-temp {
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+}
+
+.weather-description {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 120%;
+}
+
+.header-search-button {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    
+
+}
+
+.button {
+    background-color: #fff;
+    border: 1px solid #62cded;
+    border-radius: 50%;
+    text-align: center;
+}
+
+input {
+    min-width: 300px;
+    min-height: 30px;
+    font-size: 110%;
+    margin-top:15px;
+    border: 1px solid #62cded;
+}
